@@ -19,13 +19,13 @@ public class UserController {
     }
 
     @GetMapping
-    public String index(Model model) {
+    public String displayIndex(Model model) {
         model.addAttribute("users", userService.getAllUsers());
         return "/index";
     }
 
     @GetMapping("/{id}")
-    public String user(@PathVariable("id") int id, Model model) {
+    public String getUserById(@PathVariable("id") int id, Model model) {
         model.addAttribute("user", userService.getUser(id));
         return "/user";
     }
